@@ -16,11 +16,11 @@ const Navbar = () => {
     opacity: 0,
   })
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null)
-  console.log({ StateOf: activeSectionId })
+  // console.log({ StateOf: activeSectionId })
 
   useEffect(() => {
     const sections = NAV_ITEMS.map((item) => document.getElementById(item.href))
-    console.log({ sections })
+    // console.log({ sections })
 
     const isMobile = window.innerWidth <= 768
     const observer = new IntersectionObserver(
