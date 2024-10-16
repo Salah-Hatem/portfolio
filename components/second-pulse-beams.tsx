@@ -104,7 +104,7 @@ const grad7 = {
 }
 export const SecondPulseBeams = () => {
   return (
-    <div className="flex h-[900px] w-[1440px]  items-center justify-center antialiased  overflow-hidden mx-auto">
+    <div className="flex h-[900px] w-[1440px]  items-center justify-center antialiased  overflow-visible mx-auto">
       <div className="absolute inset-0 flex items-center justify-center">
         <SVGs />
       </div>

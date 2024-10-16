@@ -16,20 +16,33 @@ const Navbar = () => {
     opacity: 0,
   })
   const [activeSectionId, setActiveSectionId] = useState<string | null>(null)
-  // console.log({ StateOf: activeSectionId })
+  console.log({ StateOf: activeSectionId })
 
   useEffect(() => {
     const sections = NAV_ITEMS.map((item) => document.getElementById(item.href))
+    console.log({ sections })
 
+    const isMobile = window.innerWidth <= 768
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSectionId(entry.target.id)
-          }
-        })
+        const sortedEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+        if (sortedEntries.length > 0) {
+          // Set the active section to the one with the largest intersection ratio
+          setActiveSectionId(sortedEntries[0].target.id)
+        }
+
+        // entries.forEach((entry) => {
+        //   if (entry.isIntersecting) {
+        //     setActiveSectionId(entry.target.id)
+        //   }
+        // })
       },
-      { threshold: 0.6 } // Adjust threshold as needed
+      {
+        threshold: isMobile ? 0.22 : 0.5, // Use a lower threshold on mobile to accommodate tall sections
+      }
     )
 
     // Adding the observer to the Sections of Home Page
@@ -47,8 +60,8 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-[999] w-full flex items-center justify-center p-2 pt-4 mb-[-88px]">
-      <nav className="w-[480px] h-[64px] bg-black-gradient rounded-[14px] flex items-center justify-center overflow-hidden">
-        <ul className="relative flex items-center justify-center gap-8 h-full">
+      <nav className=" w-[320px] sm:w-[480px] h-[48px] sm:h-[64px] bg-black-gradient rounded-[8px] sm:rounded-[14px] flex items-center justify-center overflow-hidden">
+        <ul className="relative flex items-center justify-center gap-6 sm:gap-8 h-full">
           {NAV_ITEMS.map((item, index) => (
             <NavItem
               key={index}
@@ -114,7 +127,7 @@ const NavItem = ({
     <li
       ref={ref}
       onMouseEnter={handleMouseEnter}
-      className={`text-white relative ${href}`}
+      className={`text-white relative text-sm sm:text-base ${href}`}
     >
       <Link href={`#${href}`}>{label}</Link>
     </li>

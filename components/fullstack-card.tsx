@@ -5,7 +5,7 @@ import { SiExpress } from "react-icons/si"
 
 const FullStackCard = () => {
   return (
-    <div className="md:col-span-5  border border-[#DBDBDB] rounded-xl hover:shadow-xl transition duration-200 shadow-input p-5 flex flex-col justify-between  ">
+    <div className="gap-4 min-h-64 md:col-span-6 lg:col-span-5   border border-[#DBDBDB] rounded-xl hover:shadow-xl transition duration-200 shadow-input p-3 lg:p-5 flex flex-col justify-between  ">
       <div className="flex items-center justify-between h-full">
         <SiNextdotjs size={64} />
         <FaReact size={64} />

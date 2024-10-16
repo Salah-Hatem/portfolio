@@ -2,7 +2,7 @@ import React from "react"
 
 const TagList = ({ tags }: { tags: string[] }) => {
   return (
-    <div className="flex gap-2">
+    <div className="flex justify-start items-start flex-wrap gap-2">
       {tags.map((tag) => (
         <span
           key={tag}

@@ -42,7 +42,7 @@ const projects = [
       "Three.js",
       "TailwindCSS",
       "Shadcn",
-      "framer-motion",
+      "Framer motion",
     ],
     image: "/images/06-Portfolio.png",
     link: "/",
@@ -53,7 +53,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="h-auto  flex flex-col items-center gap-20 pt-28"
+      className=" w-screen  flex flex-col items-center justify-center gap-10 sm:gap-20 p-4 mt-28 pt-20  "
     >
       <VelocityScroll
         text={
@@ -64,9 +64,10 @@ const ProjectsSection = () => {
           </>
         }
         default_velocity={2}
-        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
+        className=" font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
       />
-      <div className="md:w-[1200px] flex items-center justify-between flex-wrap gap-y-10">
+
+      <div className="max-w-[1200px] flex md:flex-row items-center justify-center  flex-wrap gap-x-4  gap-y-10">
         {projects.map((project, index) => {
           return (
             <BlurFade key={project.link} delay={0.25 + index * 0.05} inView>
@@ -74,7 +75,6 @@ const ProjectsSection = () => {
             </BlurFade>
           )
         })}
-        {/* <ProjectCard /> */}
       </div>
     </section>
   )

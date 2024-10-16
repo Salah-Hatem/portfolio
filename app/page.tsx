@@ -5,7 +5,7 @@ import ProjectsSection from "@/components/projects-section"
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen sm:max-w-7xl px-10 mx-auto">
+    <main className="flex flex-col items-center justify-center min-h-screen overflow-hidden  mx-auto">
       <HeroSection />
       <AboutSection />
       <ProjectsSection />

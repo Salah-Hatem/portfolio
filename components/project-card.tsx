@@ -6,7 +6,7 @@ type Project = { title: string; tags: string[]; image: string; link: string }
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="max-w-[387px] flex flex-col gap-4 h-auto  ">
+    <div className=" flex flex-col gap-4 h-auto  ">
       <div className="flex flex-col gap-6 overflow-hidden h-auto">
         <a href={project.link} target="_blank">
           <Image
@@ -14,7 +14,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             alt={project.title}
             width={387}
             height={387}
-            className="rounded-[8px]    transition-opacity duration-300 hover:opacity-80  "
+            className="rounded-[8px]  transition-opacity duration-300 hover:opacity-80  "
           />
         </a>
 
