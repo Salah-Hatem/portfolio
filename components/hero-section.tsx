@@ -58,7 +58,7 @@ const HeroSection = () => {
             download={true}
             target="_blank"
             rel="noopener noreferrer"
-            href="/files/salah-hatem-cv-oct2024.pdf"
+            href="/files/Salah-Cv-Nov-2024.pdf"
           >
             <Button
               variant="outline"
