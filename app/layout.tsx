@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { GoogleTagManager } from "@next/third-parties/google"
 
 import "./globals.css"
 import { Inter } from "next/font/google"
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth ">
       <head>
+        <GoogleTagManager gtmId="GTM-PFPT6KQ2" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${inter.style.fontFamily} } antialiased`}>
