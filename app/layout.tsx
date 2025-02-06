@@ -25,10 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth ">
-      <head>
-        <GoogleTagManager gtmId="GTM-PFPT6KQ2" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
+      <GoogleTagManager gtmId="GTM-PFPT6KQ2" />
       <body className={`${inter.style.fontFamily} } antialiased`}>
         <Navbar />
         {children}
